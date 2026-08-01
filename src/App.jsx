@@ -583,8 +583,8 @@ function App() {
                   <Phone size={20} />
                 </div>
                 <div className="contact-info-text">
-                  <h4>Call Us</h4>
-                  <p>+91 7738863965</p>
+                  <h4>Cals</h4>
+                  <p>chinmaysmusicacademy0109@gmail.com</p>
                 </div>
               </div>
 
@@ -594,7 +594,7 @@ function App() {
                 </div>
                 <div className="contact-info-text">
                   <h4>Academy Location</h4>
-                  <p>Dombivli, Maharashtra, 421203</p>
+                  <p>202, RH - 68, Vishambhar CHS, Sudama Nagar, MIDC, Dombivli East 421203</p>
                 </div>
               </div>
             </div>
@@ -743,10 +743,26 @@ function App() {
               </div>
               <div className="footer-contact-item">
                 <MapPin size={16} />
-                <span>Dombivli, Maharashtra, 421203</span>
+                <span>202, RH - 68, Vishambhar CHS, Sudama Nagar, MIDC, Dombivli East 421203</span>
+
+              </div>
+            </div>
+            <div className="footer-col footer-map-col">
+              <div className="footer-map-container">
+                <iframe
+                  title="Chinmay's Music Academy Location Map"
+                  src="https://maps.google.com/maps?q=19.2048174,73.1046268&z=17&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
             </div>
           </div>
+
         </div>
 
         {/* Footer Bottom */}
@@ -820,8 +836,8 @@ function App() {
                 onChange={(e) => setDemoForm({ ...demoForm, course: e.target.value })}
               >
                 <option value="Hindustani Classical">Hindustani Classical</option>
-                <option value="Contemporary Music">Contemporary Music</option>
-                <option value="Vocal Training">Vocal Training</option>
+                <option value="Contemporary Music">Natyasangeet</option>
+                <option value="Light/Bollywood Music">Vocal Training</option>
                 <option value="Kids & Adults">Kids & Adults</option>
               </select>
             </div>
