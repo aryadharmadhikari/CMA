@@ -387,43 +387,29 @@ function App() {
             </div>
           </div>
 
-          {/* Card 2: Contemporary Music */}
+          {/* Card 2: Natyasangeet */}
           <div className="course-card reveal reveal-delay-1">
             <div className="course-img-container">
-              <img src="/images/course_contemporary.png" alt="Contemporary singer and guitarist" className="course-img" />
+              <img src="/images/course_vocal_training.png" alt="Traditional vocalist performing stage Natyasangeet" className="course-img" />
             </div>
             <div className="course-info">
-              <h3 className="course-title">Contemporary Music</h3>
-              <p className="course-desc">Master modern pop, rock, and fusion, including microphone technique, guitar accompaniment, and songwriting.</p>
-              <a href="#contact" onClick={() => openDemoModal('Contemporary Music')} className="course-link">
+              <h3 className="course-title">Natyasangeet</h3>
+              <p className="course-desc">Immerse yourself in the rich heritage of Marathi musical theatre. Master traditional natyapads, classical structures, and expressive stage presence.</p>
+              <a href="#contact" onClick={() => openDemoModal('Natyasangeet')} className="course-link">
                 Learn More <ChevronRight size={16} />
               </a>
             </div>
           </div>
 
-          {/* Card 3: Vocal Training */}
+          {/* Card 3: Light/Bollywood Music */}
           <div className="course-card reveal reveal-delay-2">
             <div className="course-img-container">
-              <img src="/images/course_vocal_training.png" alt="Female vocalist training in studio" className="course-img" />
+              <img src="/images/course_contemporary.png" alt="Bollywood and light music performance style" className="course-img" />
             </div>
             <div className="course-info">
-              <h3 className="course-title">Vocal Training</h3>
-              <p className="course-desc">A highly scientific voice coaching system focusing on pitch, range expansion, breath stamina, and vocal hygiene.</p>
-              <a href="#contact" onClick={() => openDemoModal('Vocal Training')} className="course-link">
-                Learn More <ChevronRight size={16} />
-              </a>
-            </div>
-          </div>
-
-          {/* Card 4: Kids & Adults */}
-          <div className="course-card reveal reveal-delay-3">
-            <div className="course-img-container">
-              <img src="/images/course_kids_adults.png" alt="Happy child singing in class" className="course-img" />
-            </div>
-            <div className="course-info">
-              <h3 className="course-title">Kids & Adults</h3>
-              <p className="course-desc">Custom tailored age-inclusive learning tracks designed to keep young minds engaged and busy professionals growing.</p>
-              <a href="#contact" onClick={() => openDemoModal('Kids & Adults')} className="course-link">
+              <h3 className="course-title">Light/Bollywood Music</h3>
+              <p className="course-desc">Learn popular Bollywood, semi-classical, and light devotional songs. Master modern expression, playback techniques, and stage performance confidence.</p>
+              <a href="#contact" onClick={() => openDemoModal('Light/Bollywood Music')} className="course-link">
                 Learn More <ChevronRight size={16} />
               </a>
             </div>
@@ -651,9 +637,8 @@ function App() {
                   onChange={(e) => setContactForm({ ...contactForm, course: e.target.value })}
                 >
                   <option value="Hindustani Classical">Hindustani Classical</option>
-                  <option value="Contemporary Music">Contemporary Music</option>
-                  <option value="Vocal Training">Vocal Training</option>
-                  <option value="Kids & Adults">Kids & Adults (Age-inclusive)</option>
+                  <option value="Natyasangeet">Natyasangeet</option>
+                  <option value="Light/Bollywood Music">Light/Bollywood Music</option>
                 </select>
               </div>
 
@@ -723,9 +708,8 @@ function App() {
             <h3>Our Courses</h3>
             <ul className="footer-links">
               <li><a href="#courses" onClick={() => openDemoModal('Hindustani Classical')}>Hindustani Classical</a></li>
-              <li><a href="#courses" onClick={() => openDemoModal('Contemporary Music')}>Contemporary Music</a></li>
-              <li><a href="#courses" onClick={() => openDemoModal('Vocal Training')}>Vocal Training</a></li>
-              <li><a href="#courses" onClick={() => openDemoModal('Kids & Adults')}>Kids & Adults Course</a></li>
+              <li><a href="#courses" onClick={() => openDemoModal('Natyasangeet')}>Natyasangeet</a></li>
+              <li><a href="#courses" onClick={() => openDemoModal('Light/Bollywood Music')}>Light/Bollywood Music</a></li>
             </ul>
           </div>
 
@@ -836,9 +820,8 @@ function App() {
                 onChange={(e) => setDemoForm({ ...demoForm, course: e.target.value })}
               >
                 <option value="Hindustani Classical">Hindustani Classical</option>
-                <option value="Contemporary Music">Natyasangeet</option>
-                <option value="Light/Bollywood Music">Vocal Training</option>
-                <option value="Kids & Adults">Kids & Adults</option>
+                <option value="Natyasangeet">Natyasangeet</option>
+                <option value="Light/Bollywood Music">Light/Bollywood Music</option>
               </select>
             </div>
 
