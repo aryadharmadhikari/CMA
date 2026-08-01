@@ -19,7 +19,8 @@ import {
   Send,
   Calendar,
   Star,
-  ShieldCheck
+  ShieldCheck,
+  Ear
 } from 'lucide-react';
 import './App.css';
 
@@ -293,35 +294,35 @@ function App() {
             <Mic size={24} />
           </div>
           <h3 className="feature-title">Vocal Ergonomics</h3>
-          <p className="feature-desc">Scientifically designed vocal strain prevention & safety training.</p>
+          <p className="feature-desc">Learn correct and dynamic usage of vocal elements.</p>
         </div>
         <div className="feature-card reveal reveal-delay-1">
           <div className="feature-icon-wrapper">
             <Sparkles size={24} />
           </div>
           <h3 className="feature-title">Performance Focused</h3>
-          <p className="feature-desc">Frequent live stage exposures, microphone confidence & real shows.</p>
+          <p className="feature-desc">Teaching through performance based elements with live shows exposure.</p>
         </div>
         <div className="feature-card reveal reveal-delay-2">
           <div className="feature-icon-wrapper">
             <Compass size={24} />
           </div>
-          <h3 className="feature-title">Contemporary Approach</h3>
-          <p className="feature-desc">A beautiful, fluid blend of classical roots and modern techniques.</p>
+          <h3 className="feature-title">Approach</h3>
+          <p className="feature-desc">Traditionally rooted as well as modern key aspects.</p>
         </div>
         <div className="feature-card reveal reveal-delay-3">
+          <div className="feature-icon-wrapper">
+            <Ear size={24} />
+          </div>
+          <h3 className="feature-title">Ear Training</h3>
+          <p className="feature-desc">Learn how to listen before you sing.</p>
+        </div>
+        <div className="feature-card reveal reveal-delay-4">
           <div className="feature-icon-wrapper">
             <Users size={24} />
           </div>
           <h3 className="feature-title">Personalized Attention</h3>
           <p className="feature-desc">Small batch sizes ensuring tailored, individual mentorship.</p>
-        </div>
-        <div className="feature-card reveal reveal-delay-4">
-          <div className="feature-icon-wrapper">
-            <Award size={24} />
-          </div>
-          <h3 className="feature-title">Certified Programs</h3>
-          <p className="feature-desc">Highly structured curriculum backed by professional examinations.</p>
         </div>
       </section>
 
@@ -550,7 +551,7 @@ function App() {
             <span className="section-label">Admissions</span>
             <h2 className="section-title">Begin Your Musical Journey With CMA</h2>
             <p className="hero-subheading" style={{ margin: '0' }}>
-              Whether you are an aspiring vocalist wishing to refine your classical sur, a hobbyist desiring to play chords on guitar, or a parent supporting a musical toddler, we are here to guide you.
+              Whether you are an aspiring vocalist wishing to refine your classical sur, a hobbyist desiring to sing, or a parent supporting a musical toddler, we are here to guide you.
             </p>
 
             <div className="contact-info-list">
