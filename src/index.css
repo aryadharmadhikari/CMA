@@ -446,14 +446,14 @@ p {
   margin-bottom: 16px;
   color: var(--accent-gold);
   transition: var(--transition-smooth);
-  box-shadow: 0 0 10px rgba(212, 175, 55, 0.1);
-  background: rgba(5, 11, 24, 0.6);
+  box-shadow: 0 0 10px rgba(0, 168, 181, 0.1);
+  background: rgba(0, 168, 181, 0.08);
 }
 
 .feature-card:hover .feature-icon-wrapper {
   background: var(--accent-gold);
-  color: var(--bg-darker);
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+  color: #FFFFFF;
+  box-shadow: 0 0 20px rgba(0, 168, 181, 0.3);
 }
 
 .feature-title {
@@ -729,13 +729,13 @@ p {
 .testimonials-section {
   padding: 120px 8%;
   background-color: #F8F9FA;
-  color: var(--text-dark);
+  color: var(--text-white);
   text-align: center;
   position: relative;
 }
 
 .testimonials-section .section-title {
-  color: var(--text-dark);
+  color: var(--text-white);
 }
 
 .testimonials-section .section-description {
@@ -792,7 +792,7 @@ p {
   font-family: var(--font-sans);
   font-weight: 700;
   font-size: 16px;
-  color: var(--text-dark);
+  color: var(--text-white);
 }
 
 /* Featured Center Card (Gold Highlight) */
