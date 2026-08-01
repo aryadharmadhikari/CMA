@@ -674,17 +674,14 @@ function App() {
               Chinmay’s Music Academy is a premier music institution nurturing voices, developing performance confidence, and inspiring artistic excellence.
             </p>
             <div className="social-links">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon-btn" aria-label="Instagram">
+              <a href="https://www.instagram.com/cma_music_0109" target="_blank" rel="noopener noreferrer" className="social-icon-btn" aria-label="Instagram">
                 <Instagram size={18} />
               </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon-btn" aria-label="Facebook">
+              <a href="https://www.facebook.com/people/Chinmays-Music-Academy/100094766855640/" target="_blank" rel="noopener noreferrer" className="social-icon-btn" aria-label="Facebook">
                 <Facebook size={18} />
               </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="social-icon-btn" aria-label="YouTube">
+              <a href="https://www.youtube.com/@chinmaysmusicacademy0109" target="_blank" rel="noopener noreferrer" className="social-icon-btn" aria-label="YouTube">
                 <Youtube size={18} />
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-icon-btn" aria-label="Twitter">
-                <Twitter size={18} />
               </a>
             </div>
           </div>
