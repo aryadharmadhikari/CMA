@@ -254,7 +254,7 @@ function App() {
           <div className="hero-content reveal">
             <h1 className="hero-heading">
               Chinmay's <br />
-              <span className="gold-gradient-text">Music Academy</span>
+              Music Academy
             </h1>
             <p className="hero-tagline" style={{ fontSize: '1.5rem', fontWeight: '600', color: 'var(--accent-gold)', marginTop: '1rem', marginBottom: '1.5rem', letterSpacing: '0.5px' }}>
               <i>Where Music becomes a Way of Life</i>

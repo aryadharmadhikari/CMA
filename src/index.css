@@ -27,8 +27,8 @@
   /* Soft light shadow */
   --shadow-gold-glow: 0 0 20px rgba(0, 168, 181, 0.1);
 
-  --font-serif: 'Outfit', system-ui, -apple-system, sans-serif;
-  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Alice', serif;
+  --font-sans: 'Alice', serif;
 
   --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-fast: all 0.2s ease;
@@ -333,6 +333,7 @@ p {
 }
 
 .hero-heading {
+  font-family: 'Alice', cursive;
   font-size: 64px;
   line-height: 1.15;
   font-weight: 700;
