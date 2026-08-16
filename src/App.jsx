@@ -733,7 +733,7 @@ function App() {
               <div className="footer-map-container">
                 <iframe
                   title="Chinmay's Music Academy Location Map"
-                  src="https://maps.google.com/maps?q=19.2048174,73.1046268&z=17&output=embed"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1141.0648125244343!2d73.10417358146532!3d19.204884329519675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be795554f93093b%3A0xb22f158acc742e7f!2sChinmay's%20Music%20Academy!5e0!3m2!1sen!2sus!4v1786873416599!5m2!1sen!2sus"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
