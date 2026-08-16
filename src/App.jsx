@@ -248,7 +248,14 @@ function App() {
 
       {/* Hero Section */}
       <section id="home" className="hero-section">
-        <div className="hero-bg-glow"></div>
+        <div className="hero-bg-image-wrapper">
+          <img
+            src="/images/hero_instruments_wide.png"
+            alt="Classical Indian Musical Instruments - Tanpura, Tabla, Harmonium"
+            className="hero-bg-img"
+          />
+        </div>
+
         <div className="hero-container">
           {/* Left Hero Content */}
           <div className="hero-content reveal">
@@ -256,10 +263,10 @@ function App() {
               Chinmay's <br />
               Music Academy
             </h1>
-            <p className="hero-tagline" style={{ fontSize: '1.5rem', fontWeight: '600', color: 'var(--accent-gold)', marginTop: '1rem', marginBottom: '1.5rem', letterSpacing: '0.5px' }}>
+            <p className="hero-tagline">
               <i>Where Music becomes a Way of Life</i>
             </p>
-            <p className="hero-subheading" style={{ marginTop: '0px' }}>
+            <p className="hero-subheading">
               Join Chinmay’s Music Academy and begin your musical journey with world-class expert guidance, personalized curriculums, and a performance-driven structure.
             </p>
             <div className="hero-actions">
@@ -272,18 +279,8 @@ function App() {
             </div>
           </div>
 
-          {/* Right Hero Image overlapping naturally */}
-          <div className="hero-image-wrapper reveal reveal-delay-2">
-            <div className="hero-glow-ring"></div>
-            <div className="hero-image-container">
-              <img
-                src="/images/hero_singer.png"
-                alt="Vocalist performing live on stage under spotlights"
-                className="hero-image"
-              />
-              <div className="hero-image-overlay"></div>
-            </div>
-          </div>
+          {/* Right space allowing instruments on the right of the background image to showcase */}
+          <div className="hero-right-space"></div>
         </div>
       </section>
 
