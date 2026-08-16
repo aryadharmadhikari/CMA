@@ -567,7 +567,7 @@ function App() {
                   <Phone size={20} />
                 </div>
                 <div className="contact-info-text">
-                  <h4>Cals</h4>
+                  <h4>Calls</h4>
                   <p>chinmaysmusicacademy0109@gmail.com</p>
                 </div>
               </div>
