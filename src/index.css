@@ -852,11 +852,11 @@ p {
 }
 
 .testimonial-card.featured .testimonial-name {
-  color: var(--accent-gold);
+  color: #FFFFFF;
 }
 
 .testimonial-card.featured .testimonial-review {
-  color: var(--text-gray);
+  color: #F1F5F9;
 }
 
 .testimonial-card.featured .testimonial-avatar {

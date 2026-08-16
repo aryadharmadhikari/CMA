@@ -547,7 +547,7 @@ function App() {
           <div className="contact-left reveal">
             <span className="section-label">Admissions</span>
             <h2 className="section-title">Begin Your Musical Journey With CMA</h2>
-            <p className="hero-subheading" style={{ margin: '0' }}>
+            <p style={{ margin: '0 0 20px 0', fontSize: '16px', lineHeight: '1.6', color: 'var(--text-gray)' }}>
               Whether you are an aspiring vocalist wishing to refine your classical sur, a hobbyist desiring to sing, or a parent supporting a musical toddler, we are here to guide you.
             </p>
 
