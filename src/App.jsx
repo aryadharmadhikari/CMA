@@ -671,6 +671,9 @@ function App() {
             <a href="#home" className="footer-logo">
               <img src="/images/logo.png" alt="Chinmay's Music Academy Logo" style={{ height: '90px', width: 'auto', borderRadius: '50%', marginRight: '8px', verticalAlign: 'middle', border: '1px solid var(--accent-gold)' }} />
             </a>
+            <p className="amita-regular footer-sanskrit-tagline" style={{ fontFamily: "'Amita', serif", fontSize: '1.15rem', fontWeight: '600', color: 'var(--accent-gold)', marginTop: '10px', marginBottom: '12px' }}>
+              यत्र संगीतं जीवनमार्गो भवति
+            </p>
             <p className="footer-desc">
               Chinmay’s Music Academy is a premier music institution nurturing voices, developing performance confidence, and inspiring artistic excellence.
             </p>

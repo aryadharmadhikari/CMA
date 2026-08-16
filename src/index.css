@@ -82,6 +82,18 @@ p {
   color: var(--text-gray);
 }
 
+.amita-regular {
+  font-family: "Amita", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.amita-bold {
+  font-family: "Amita", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
 .text-gold {
   color: var(--accent-gold);
 }
@@ -1548,6 +1560,16 @@ textarea.form-control {
   .footer-top {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+
+  .nav-sanskrit-tagline {
+    font-size: 0.85rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .nav-sanskrit-tagline {
+    display: none !important;
   }
 }
 
