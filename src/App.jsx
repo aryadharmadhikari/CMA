@@ -331,16 +331,18 @@ function App() {
         </svg>
 
         <div className="about-container">
-          {/* Left Column: Portrait of Founder with overlay signature */}
+          {/* Left Column: Portrait of Founder with description below */}
           <div className="about-image-wrapper reveal">
             <div className="about-image-container">
               <img
-                src="/images/founder_chinmay.png"
-                alt="Founder Chinmay playing guitar in professional music studio"
+                src="/images/founder_chinmay.jpeg"
+                alt="Chinmay Dharmadhikari - Founder & Director at CMA"
                 className="about-image"
               />
-              <div className="about-image-overlay"></div>
-              <div className="founder-signature">Chinmay</div>
+            </div>
+            <div className="about-image-caption">
+              <h3 className="founder-name">Chinmay Dharmadhikari</h3>
+              <p className="founder-role">Founder & Director - CMA</p>
             </div>
           </div>
 
@@ -352,8 +354,9 @@ function App() {
               <span className="text-gold">Inspiring Performers.</span>
             </h2>
             <p className="about-desc">
-              At Chinmay's Music Academy, we believe music is far more than just memorizing notes and repeating scales. It is an emotional expression, a builder of lifelong confidence, and a journey of self-discovery. <br /><br />
-              Founded by industry veteran Chinmay, our academy focuses on creating holistic performers. We guide our students through the mechanics of breathing, stage presence, crowd connection, and artistic individuality, preparing them to truly move audiences, rather than just sing.
+              Chinmay's Music Academy (CMA) is a vibrant musical institution dedicated to nurturing not just skilled performers, but lifelong musicians.
+              <br />
+              Founded by Chinmay Dharmadhikari in 2021, CMA believes that music is far more than an art form—it is a way of life. Guided by its tagline, "Where Music Becomes A Way Of Life" (यत्र संगीतं जीवनमार्गो भवति), the academy focuses on holistic musical development through structured training, personalized guidance, and deep attention to the finer nuances of music.
             </p>
             <a href="#contact" className="btn btn-gold">
               Know More About CMA <ChevronRight size={18} />
