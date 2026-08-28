@@ -20,8 +20,10 @@ import {
   Calendar,
   Star,
   ShieldCheck,
-  Ear
+  Ear,
+  ExternalLink
 } from 'lucide-react';
+import { fetchReviewsFromFirebase } from './firebase';
 import './App.css';
 
 // Inline SVG components for social brand icons
@@ -165,30 +167,47 @@ function App() {
     { id: 6, tag: "Fiesta", title: "Fiesta Grand Finale Chorus", src: "/images/event_fiesta.png" }
   ];
 
-  // Testimonials Data
-  const testimonials = [
+  // Fallback Testimonials Data
+  const defaultTestimonials = [
     {
-      id: 0,
+      id: "1",
       name: "Ananya Deshmukh",
       course: "Hindustani Classical Student",
-      avatar: "/images/student_avatar1.png",
+      rating: 5,
       review: "CMA has completely transformed my approach to classical singing. The guru-shishya dynamic integrated with scientific vocal exercises helped me gain voice control I never thought possible."
     },
     {
-      id: 1,
+      id: "2",
       name: "Rohan Malhotra",
       course: "Contemporary Vocals & Guitar",
-      avatar: "/images/student_avatar2.png",
+      rating: 5,
       review: "The stage exposure here is unmatched! Within six months, I was performing live in front of hundreds. The contemporary program is practical, performance-driven, and extremely inspiring."
     },
     {
-      id: 2,
+      id: "3",
       name: "Dr. Sunita Sharma",
       course: "Parent of Arjun (8 Yrs)",
-      avatar: "/images/student_avatar3.png",
+      rating: 5,
       review: "I enrolled my son in the Kids program. The educators make complex musical theory fun and accessible. The personalized attention in small batches is a huge plus for early development."
     }
   ];
+
+  // Dynamic Testimonials from Firebase
+  const [testimonials, setTestimonials] = useState(defaultTestimonials);
+
+  useEffect(() => {
+    async function loadReviews() {
+      try {
+        const cloudReviews = await fetchReviewsFromFirebase();
+        if (cloudReviews && cloudReviews.length > 0) {
+          setTestimonials(cloudReviews);
+        }
+      } catch (err) {
+        console.warn("Using fallback reviews:", err);
+      }
+    }
+    loadReviews();
+  }, []);
 
   // Generating floating background particles
   const particles = Array.from({ length: 15 });
@@ -458,17 +477,21 @@ function App() {
         <div className="testimonials-grid">
           {testimonials.map((item, idx) => (
             <div
-              key={item.id}
+              key={item.id || idx}
               className={`testimonial-card ${idx === activeTestimonial ? 'featured' : ''}`}
               onClick={() => setActiveTestimonial(idx)}
               style={{ cursor: 'pointer' }}
             >
-              <img src={item.avatar} alt={item.name} className="testimonial-avatar" />
-              <Star className="testimonial-quote-icon" fill="#D4AF37" color="#D4AF37" size={24} />
-              <p className="testimonial-review">"{item.review}"</p>
-              <h4 className="testimonial-name">{item.name}</h4>
-              <p style={{ fontSize: '13px', color: idx === activeTestimonial ? '#E2E8F0' : '#718096', fontWeight: 500 }}>
-                {item.course}
+              {/* Star Rating */}
+              <div style={{ display: 'flex', gap: '4px', marginBottom: '16px' }}>
+                {[...Array(item.rating || 5)].map((_, sIdx) => (
+                  <Star key={sIdx} size={18} fill="#D4AF37" color="#D4AF37" />
+                ))}
+              </div>
+              <p className="testimonial-review">"{item.review || item.text}"</p>
+              <h4 className="testimonial-name">{item.name || item.author_name}</h4>
+              <p style={{ fontSize: '13px', color: idx === activeTestimonial ? '#E2E8F0' : '#718096', fontWeight: 500, marginTop: '4px' }}>
+                {item.course || "Google Review"}
               </p>
             </div>
           ))}
@@ -484,6 +507,19 @@ function App() {
               aria-label={`Go to slide ${idx + 1}`}
             />
           ))}
+        </div>
+
+        {/* View on Google Maps CTA */}
+        <div style={{ marginTop: '32px', display: 'flex', justifyContent: 'center' }}>
+          <a
+            href="https://www.google.com/maps/place/Chinmay's+Music+Academy/@19.204817,73.104627,932m/data=!3m1!1e3!4m8!3m7!1s0x3be795554f93093b:0xb22f158acc742e7f!8m2!3d19.2048174!4d73.1046268!9m1!1b1!16s%2Fg%2F11w2182vjp?hl=en"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-outline"
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}
+          >
+            View All Reviews on Google Maps <ExternalLink size={16} />
+          </a>
         </div>
       </section>
 
