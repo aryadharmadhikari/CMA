@@ -167,28 +167,28 @@ function App() {
     { id: 6, tag: "Fiesta", title: "Fiesta Grand Finale Chorus", src: "/images/event_fiesta.png" }
   ];
 
-  // Fallback Testimonials Data
+  // Fallback / Initial Real Google Reviews
   const defaultTestimonials = [
     {
       id: "1",
-      name: "Ananya Deshmukh",
-      course: "Hindustani Classical Student",
+      name: "Sanjeevani Chandurkar",
+      course: "Google Verified Review",
       rating: 5,
-      review: "CMA has completely transformed my approach to classical singing. The guru-shishya dynamic integrated with scientific vocal exercises helped me gain voice control I never thought possible."
+      review: "Chinmay Music Academy consistently undertakes a variety of creative projects and always encourages its students to explore, learn, and perform. Chinmay Sir is deeply committed to this vision and firmly believes in providing every student with opportunities to grow, showcase their talent, and build confidence through such initiatives."
     },
     {
       id: "2",
-      name: "Rohan Malhotra",
-      course: "Contemporary Vocals & Guitar",
+      name: "Adwait Kavathekar",
+      course: "Google Verified Review",
       rating: 5,
-      review: "The stage exposure here is unmatched! Within six months, I was performing live in front of hundreds. The contemporary program is practical, performance-driven, and extremely inspiring."
+      review: "Well structured curriculum and focused attention. The betterment in candidates is really visible. Worth joining for all age group interested in learning music."
     },
     {
       id: "3",
-      name: "Dr. Sunita Sharma",
-      course: "Parent of Arjun (8 Yrs)",
+      name: "Janhavi Joshi",
+      course: "Google Verified Review",
       rating: 5,
-      review: "I enrolled my son in the Kids program. The educators make complex musical theory fun and accessible. The personalized attention in small batches is a huge plus for early development."
+      review: "This is one of the best singing classes I've come across. Chinmay Sir is extremely patient and encouraging."
     }
   ];
 

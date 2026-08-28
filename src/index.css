@@ -802,14 +802,14 @@ p {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  align-items: center;
+  align-items: stretch;
   margin-bottom: 40px;
 }
 
 .testimonial-card {
   background: #FFFFFF;
   border-radius: 18px;
-  padding: 40px 30px;
+  padding: 36px 28px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   border: 1px solid #E2E8F0;
   text-align: center;
@@ -818,6 +818,8 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 .testimonial-avatar {
@@ -837,18 +839,23 @@ p {
 }
 
 .testimonial-review {
-  font-size: 15px;
-  line-height: 1.6;
+  font-size: 14.5px;
+  line-height: 1.65;
   color: #4A5568;
   font-style: italic;
   margin-bottom: 24px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .testimonial-name {
   font-family: var(--font-sans);
   font-weight: 700;
   font-size: 16px;
-  color: var(--text-white);
+  color: #1A202C;
+  margin-top: auto;
 }
 
 /* Featured Center Card (Gold Highlight) */
@@ -856,7 +863,7 @@ p {
   background: linear-gradient(135deg, #1C273C 0%, #050B18 100%);
   color: var(--text-white);
   border: 1px solid var(--accent-gold);
-  transform: translateY(-10px);
+  transform: translateY(-8px);
   box-shadow: var(--shadow-premium), var(--shadow-gold-glow);
 }
 
@@ -873,7 +880,7 @@ p {
 }
 
 .testimonial-card:not(.featured):hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
   border-color: var(--accent-gold);
 }

@@ -31,6 +31,11 @@ export async function fetchReviewsFromFirebase() {
       querySnapshot.forEach((docSnap) => {
         reviewsList.push({ id: docSnap.id, ...docSnap.data() });
       });
+      reviewsList.sort((a, b) => {
+        const numA = parseInt((a.id || "").replace(/\D/g, "")) || 0;
+        const numB = parseInt((b.id || "").replace(/\D/g, "")) || 0;
+        return numA - numB;
+      });
       return reviewsList;
     }
   } catch (firestoreError) {

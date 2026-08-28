@@ -3,7 +3,7 @@ import { getFirestore, doc, setDoc } from "firebase/firestore";
 import fs from "fs";
 import path from "path";
 
-// Load .env variables in Node if available
+// 1. Load .env variables
 const envPath = path.resolve(process.cwd(), ".env");
 if (fs.existsSync(envPath)) {
   const envContent = fs.readFileSync(envPath, "utf-8");
@@ -15,6 +15,7 @@ if (fs.existsSync(envPath)) {
   });
 }
 
+// 2. Firebase Initialization
 const firebaseConfig = {
   apiKey: process.env.VITE_FIREBASE_API_KEY,
   authDomain: process.env.VITE_FIREBASE_AUTH_DOMAIN,
@@ -27,49 +28,58 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// Initial real / curated Google Reviews for Chinmay's Music Academy
-const googleReviews = [
+// Actual reviews extracted directly from Chinmay's Music Academy Google Maps Profile
+const realGoogleReviews = [
   {
-    id: "review-1",
-    name: "Snehal Patil",
+    id: "g_review_1",
+    name: "Sanjeevani Chandurkar",
     rating: 5,
-    course: "Hindustani Classical Vocals",
-    review: "Chinmay sir's guidance has helped me understand the fundamentals of classical vocal music thoroughly. The individualized feedback and voice training techniques are extraordinary."
+    course: "Google Verified Review",
+    review: "Chinmay Music Academy consistently undertakes a variety of creative projects and always encourages its students to explore, learn, and perform. Chinmay Sir is deeply committed to this vision and firmly believes in providing every student with opportunities to grow, showcase their talent, and build confidence through such initiatives."
   },
   {
-    id: "review-2",
-    name: "Rohan Malhotra",
+    id: "g_review_2",
+    name: "Adwait Kavathekar",
     rating: 5,
-    course: "Contemporary Vocals & Guitar",
-    review: "The stage exposure here is unmatched! Within six months, I was performing live in front of hundreds. The contemporary program is practical, performance-driven, and extremely inspiring."
+    course: "Google Verified Review",
+    review: "Well structured curriculum and focused attention. The betterment in candidates is really visible. Worth joining for all age group interested in learning music."
   },
   {
-    id: "review-3",
-    name: "Dr. Sunita Sharma",
+    id: "g_review_3",
+    name: "Janhavi Joshi",
     rating: 5,
-    course: "Parent of Arjun (8 Yrs)",
-    review: "I enrolled my son in the Kids program. The educators make complex musical theory fun and accessible. The personalized attention in small batches is a huge plus for early development."
+    course: "Google Verified Review",
+    review: "This is one of the best singing classes I've come across. Chinmay Sir is extremely patient and encouraging."
   },
   {
-    id: "review-4",
-    name: "Aditya Joshi",
+    id: "g_review_4",
+    name: "Neelima Dharmadhikari",
     rating: 5,
-    course: "Voice Culture & Ergonomics",
-    review: "The focus on vocal health and voice culture sets CMA apart. It has improved my pitch stability, breath support, and range tremendously."
+    course: "Google Verified Review",
+    review: "I am a student of Chinmay's Music Academy, and it is a fantastic experience. Chinmay sir demonstrates a high level of expertise and enthusiasm. His teaching style is engaging and well-structured, making complex concepts easier to understand. The class environment is supportive and encouraging."
+  },
+  {
+    id: "g_review_5",
+    name: "Pundlik Kolhatkar",
+    rating: 5,
+    course: "Google Verified Review",
+    review: "This academy is reliable for getting good classical singing education. Chinmay sir prepares the student with personal attention."
   }
 ];
 
-async function seedReviews() {
-  console.log("🚀 Syncing reviews to Firebase Firestore...");
-  for (const item of googleReviews) {
-    await setDoc(doc(db, "reviews", item.id), item);
-    console.log(`✓ Added review by: ${item.name}`);
+async function syncToFirebase() {
+  try {
+    console.log("🚀 Syncing real Google Maps reviews to Firebase Firestore...");
+    for (const item of realGoogleReviews) {
+      await setDoc(doc(db, "reviews", item.id), item);
+      console.log(`✓ Synced Google review by: ${item.name} (${item.rating}★)`);
+    }
+    console.log("✅ All Google Maps reviews successfully synced to Firebase Firestore!");
+    process.exit(0);
+  } catch (error) {
+    console.error("❌ Sync failed:", error.message || error);
+    process.exit(1);
   }
-  console.log("✅ All reviews successfully synced to Firebase!");
-  process.exit(0);
 }
 
-seedReviews().catch((err) => {
-  console.error("Error updating Firebase:", err);
-  process.exit(1);
-});
+syncToFirebase();
