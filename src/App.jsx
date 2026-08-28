@@ -532,39 +532,39 @@ function App() {
         </p>
 
         <div className="events-grid">
-          {/* Card 1: Summer Concert */}
+          {/* Card 1: Pancham Swar */}
           <div className="event-card reveal">
             <div className="event-img-wrapper">
-              <span className="event-date-badge">18 AUG</span>
-              <img src="/images/event_concert.png" alt="Symphony orchestra performing on stage" className="event-img" />
+              <span className="event-date-badge">06 SEP</span>
+              <img src="/images/event_concert.png" alt="Pancham Swar - 5th Year Anniversary Concert" className="event-img" />
             </div>
             <div className="event-info">
-              <h3 className="event-title">Annual Summer Concert</h3>
-              <p className="event-desc">Our flagship arena concert where students of all batches showcase their classical and contemporary progress live on stage.</p>
+              <h3 className="event-title">Pancham Swar - 5th Year Anniversary Concert</h3>
+              <p className="event-desc">Celebrating musical milestones with elite classical ensembles, choir harmonies, and live student performances.</p>
             </div>
           </div>
 
-          {/* Card 2: Masterclass */}
+          {/* Card 2: CMA Masterclass */}
           <div className="event-card reveal reveal-delay-1">
             <div className="event-img-wrapper">
-              <span className="event-date-badge">05 SEP</span>
-              <img src="/images/event_masterclass.png" alt="Intimate vocal workshop training" className="event-img" />
+              <span className="event-date-badge">31 OCT</span>
+              <img src="/images/event_masterclass.png" alt="CMA Masterclass" className="event-img" />
             </div>
             <div className="event-info">
-              <h3 className="event-title">Vocal Masterclass</h3>
-              <p className="event-desc">An advanced, intensive workshop led by founder Chinmay focusing on microtone control, stage posture, and breath ergonomics.</p>
+              <h3 className="event-title">CMA Masterclass</h3>
+              <p className="event-desc">An intensive, interactive workshop focusing on advanced vocal ergonomics, voice culture, microtonal nuances, and stage presentation.</p>
             </div>
           </div>
 
-          {/* Card 3: Fiesta */}
+          {/* Card 3: Prabhat Swar */}
           <div className="event-card reveal reveal-delay-2">
             <div className="event-img-wrapper">
-              <span className="event-date-badge">22 OCT</span>
-              <img src="/images/event_fiesta.png" alt="Grand outdoor musical festival" className="event-img" />
+              <span className="event-date-badge">08 NOV</span>
+              <img src="/images/event_fiesta.png" alt="Prabhat Swar - Diwali Pahat" className="event-img" />
             </div>
             <div className="event-info">
-              <h3 className="event-title">CMA Music Fiesta</h3>
-              <p className="event-desc">A grand musical carnival celebrating fusion, folk, and classical genres, featuring student collaborations and food zones.</p>
+              <h3 className="event-title">Prabhat Swar - Diwali Pahat</h3>
+              <p className="event-desc">A soulful morning classical concert exploring traditional morning ragas, emotive alaaps, and festive Diwali musical compositions.</p>
             </div>
           </div>
         </div>
