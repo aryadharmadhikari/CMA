@@ -601,15 +601,15 @@ function App() {
                 </div>
               </a>
 
-              <div className="contact-info-item">
+              <a href="mailto:chinmaysmusicacademy0109@gmail.com" className="contact-info-item">
                 <div className="contact-icon-box">
-                  <Phone size={20} />
+                  <Mail size={20} />
                 </div>
                 <div className="contact-info-text">
-                  <h4>Calls</h4>
+                  <h4>Email</h4>
                   <p>chinmaysmusicacademy0109@gmail.com</p>
                 </div>
-              </div>
+              </a>
 
               <div className="contact-info-item">
                 <div className="contact-icon-box">

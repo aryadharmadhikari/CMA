@@ -1034,6 +1034,14 @@ p {
   display: flex;
   align-items: center;
   gap: 20px;
+  text-decoration: none !important;
+  color: inherit;
+}
+
+.contact-info-item:hover,
+.contact-info-item:focus,
+.contact-info-item * {
+  text-decoration: none !important;
 }
 
 .contact-icon-box {
