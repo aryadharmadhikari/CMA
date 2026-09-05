@@ -421,9 +421,6 @@ function App() {
             <div className="course-info">
               <h3 className="course-title">Hindustani Classical</h3>
               <p className="course-desc">Develop a solid foundation in Indian classical raags, taal, vocal textures, and traditional music theory.</p>
-              <a href="#contact" onClick={() => openDemoModal('Hindustani Classical')} className="course-link">
-                Learn More <ChevronRight size={16} />
-              </a>
             </div>
           </div>
 
@@ -435,9 +432,6 @@ function App() {
             <div className="course-info">
               <h3 className="course-title">Natyasangeet</h3>
               <p className="course-desc">Immerse yourself in the rich heritage of Marathi musical theatre. Master traditional natyapads, classical structures, and expressive stage presence.</p>
-              <a href="#contact" onClick={() => openDemoModal('Natyasangeet')} className="course-link">
-                Learn More <ChevronRight size={16} />
-              </a>
             </div>
           </div>
 
@@ -449,9 +443,6 @@ function App() {
             <div className="course-info">
               <h3 className="course-title">Light/Bollywood Music</h3>
               <p className="course-desc">Learn popular Bollywood, semi-classical, and light devotional songs. Master modern expression, playback techniques, and stage performance confidence.</p>
-              <a href="#contact" onClick={() => openDemoModal('Light/Bollywood Music')} className="course-link">
-                Learn More <ChevronRight size={16} />
-              </a>
             </div>
           </div>
         </div>
