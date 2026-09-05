@@ -54,6 +54,41 @@ const Twitter = ({ size = 24 }) => (
   </svg>
 );
 
+// Fallback Gallery Data
+const defaultGalleryItems = [
+  { id: 1, tag: "Concert", title: "Annual Summer Symphony", src: "/images/event_concert.png" },
+  { id: 2, tag: "Classical", title: "Classical Indian Recital", src: "/images/course_classical.png" },
+  { id: 3, tag: "Studio", title: "Professional Mic Control Session", src: "/images/course_vocal_training.png" },
+  { id: 4, tag: "Guitar", title: "Contemporary Acoustic Workshop", src: "/images/course_contemporary.png" },
+  { id: 5, tag: "Recital", title: "Junior Keyboard Recital", src: "/images/course_kids_adults.png" },
+  { id: 6, tag: "Fiesta", title: "Fiesta Grand Finale Chorus", src: "/images/event_fiesta.png" }
+];
+
+// Fallback / Initial Real Google Reviews
+const defaultTestimonials = [
+  {
+    id: "1",
+    name: "Sanjeevani Chandurkar",
+    course: "Google Verified Review",
+    rating: 5,
+    review: "Chinmay Music Academy consistently undertakes a variety of creative projects and always encourages its students to explore, learn, and perform. Chinmay Sir is deeply committed to this vision and firmly believes in providing every student with opportunities to grow, showcase their talent, and build confidence through such initiatives."
+  },
+  {
+    id: "2",
+    name: "Adwait Kavathekar",
+    course: "Google Verified Review",
+    rating: 5,
+    review: "Well structured curriculum and focused attention. The betterment in candidates is really visible. Worth joining for all age group interested in learning music."
+  },
+  {
+    id: "3",
+    name: "Janhavi Joshi",
+    course: "Google Verified Review",
+    rating: 5,
+    review: "This is one of the best singing classes I've come across. Chinmay Sir is extremely patient and encouraging."
+  }
+];
+
 function App() {
   // Navigation scroll state
   const [scrolled, setScrolled] = useState(false);
@@ -105,35 +140,6 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Intersection Observer for scroll reveal animations
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const revealElements = document.querySelectorAll('.reveal');
-    revealElements.forEach((el) => observer.observe(el));
-
-    return () => {
-      revealElements.forEach((el) => observer.unobserve(el));
-    };
-  }, []);
-
-  // Show Toast Helper
-  const showToast = (message) => {
-    setToast({ show: true, message });
-    setTimeout(() => {
-      setToast({ show: false, message: '' });
-    }, 4000);
-  };
-
   // Submit Handlers
   const handleDemoSubmit = (e) => {
     e.preventDefault();
@@ -157,40 +163,33 @@ function App() {
     setMobileMenuOpen(false);
   };
 
-  // Gallery Data
-  const galleryItems = [
-    { id: 1, tag: "Concert", title: "Annual Summer Symphony", src: "/images/event_concert.png" },
-    { id: 2, tag: "Classical", title: "Classical Indian Recital", src: "/images/course_classical.png" },
-    { id: 3, tag: "Studio", title: "Professional Mic Control Session", src: "/images/course_vocal_training.png" },
-    { id: 4, tag: "Guitar", title: "Contemporary Acoustic Workshop", src: "/images/course_contemporary.png" },
-    { id: 5, tag: "Recital", title: "Junior Keyboard Recital", src: "/images/course_kids_adults.png" },
-    { id: 6, tag: "Fiesta", title: "Fiesta Grand Finale Chorus", src: "/images/event_fiesta.png" }
-  ];
+  // Show Toast Helper
+  const showToast = (message) => {
+    setToast({ show: true, message });
+    setTimeout(() => {
+      setToast({ show: false, message: '' });
+    }, 4000);
+  };
 
-  // Fallback / Initial Real Google Reviews
-  const defaultTestimonials = [
-    {
-      id: "1",
-      name: "Sanjeevani Chandurkar",
-      course: "Google Verified Review",
-      rating: 5,
-      review: "Chinmay Music Academy consistently undertakes a variety of creative projects and always encourages its students to explore, learn, and perform. Chinmay Sir is deeply committed to this vision and firmly believes in providing every student with opportunities to grow, showcase their talent, and build confidence through such initiatives."
-    },
-    {
-      id: "2",
-      name: "Adwait Kavathekar",
-      course: "Google Verified Review",
-      rating: 5,
-      review: "Well structured curriculum and focused attention. The betterment in candidates is really visible. Worth joining for all age group interested in learning music."
-    },
-    {
-      id: "3",
-      name: "Janhavi Joshi",
-      course: "Google Verified Review",
-      rating: 5,
-      review: "This is one of the best singing classes I've come across. Chinmay Sir is extremely patient and encouraging."
+  // Dynamic Gallery Data from ImageKit folder
+  const [galleryItems, setGalleryItems] = useState(defaultGalleryItems);
+
+  useEffect(() => {
+    async function loadGallery() {
+      try {
+        const res = await fetch('/api/gallery');
+        if (res.ok) {
+          const cloudItems = await res.json();
+          if (Array.isArray(cloudItems) && cloudItems.length > 0) {
+            setGalleryItems(cloudItems);
+          }
+        }
+      } catch (err) {
+        console.warn("Using default gallery items:", err);
+      }
     }
-  ];
+    loadGallery();
+  }, []);
 
   // Dynamic Testimonials from Firebase
   const [testimonials, setTestimonials] = useState(defaultTestimonials);
@@ -208,6 +207,27 @@ function App() {
     }
     loadReviews();
   }, []);
+
+  // Intersection Observer for scroll reveal animations
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const revealElements = document.querySelectorAll('.reveal');
+    revealElements.forEach((el) => observer.observe(el));
+
+    return () => {
+      revealElements.forEach((el) => observer.unobserve(el));
+    };
+  }, [galleryItems, testimonials]);
 
   // Generating floating background particles
   const particles = Array.from({ length: 15 });
@@ -448,11 +468,11 @@ function App() {
         <div className="gallery-grid">
           {galleryItems.map((item, idx) => (
             <div
-              key={item.id}
-              className={`gallery-item reveal reveal-delay-${idx % 3}`}
+              key={item.id || idx}
+              className="gallery-item"
               onClick={() => setLightboxImage(item)}
             >
-              <img src={item.src} alt={item.title} className="gallery-img" />
+              <img src={item.src} alt={item.title} className="gallery-img" loading="lazy" />
               <div className="gallery-item-overlay">
                 <span className="gallery-tag">{item.tag}</span>
                 <p className="gallery-caption">{item.title}</p>
@@ -484,7 +504,7 @@ function App() {
             >
               {/* Star Rating */}
               <div style={{ display: 'flex', gap: '4px', marginBottom: '16px' }}>
-                {[...Array(item.rating || 5)].map((_, sIdx) => (
+                {[...Array(Math.max(0, Math.min(5, Math.floor(Number(item.rating) || 5))))].map((_, sIdx) => (
                   <Star key={sIdx} size={18} fill="#D4AF37" color="#D4AF37" />
                 ))}
               </div>
@@ -888,7 +908,7 @@ function App() {
             <button className="lightbox-close" onClick={() => setLightboxImage(null)} aria-label="Close lightbox">
               <X size={30} />
             </button>
-            <img src={lightboxImage.src} alt={lightboxImage.title} className="lightbox-img" />
+            <img src={lightboxImage.originalSrc || lightboxImage.src} alt={lightboxImage.title} className="lightbox-img" />
             <p className="lightbox-caption">
               <span className="text-gold">[{lightboxImage.tag}]</span> {lightboxImage.title}
             </p>
