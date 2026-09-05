@@ -416,7 +416,7 @@ function App() {
           {/* Card 1: Hindustani Classical */}
           <div className="course-card reveal">
             <div className="course-img-container">
-              <img src="/images/course_classical.png" alt="Indian female classical vocalist singing" className="course-img" />
+              <img src="https://ik.imagekit.io/sy8fu0lam/programs/course_classical_wide.jpg" alt="Indian classical music setup with tanpura, harmonium, and tabla" className="course-img" />
             </div>
             <div className="course-info">
               <h3 className="course-title">Hindustani Classical</h3>
@@ -430,7 +430,7 @@ function App() {
           {/* Card 2: Natyasangeet */}
           <div className="course-card reveal reveal-delay-1">
             <div className="course-img-container">
-              <img src="/images/course_vocal_training.png" alt="Traditional vocalist performing stage Natyasangeet" className="course-img" />
+              <img src="https://ik.imagekit.io/sy8fu0lam/programs/course_natyasangeet_wide.jpg" alt="Natyasangeet stage setup with harmonium, music book, and brass lamp" className="course-img" />
             </div>
             <div className="course-info">
               <h3 className="course-title">Natyasangeet</h3>
@@ -444,7 +444,7 @@ function App() {
           {/* Card 3: Light/Bollywood Music */}
           <div className="course-card reveal reveal-delay-2">
             <div className="course-img-container">
-              <img src="/images/course_contemporary.png" alt="Bollywood and light music performance style" className="course-img" />
+              <img src="https://ik.imagekit.io/sy8fu0lam/programs/course_light_bollywood_wide.jpg" alt="Music studio setup with keyboard, acoustic guitar, and condenser microphone" className="course-img" />
             </div>
             <div className="course-info">
               <h3 className="course-title">Light/Bollywood Music</h3>
@@ -556,7 +556,7 @@ function App() {
           <div className="event-card reveal">
             <div className="event-img-wrapper">
               <span className="event-date-badge">06 SEP</span>
-              <img src="/images/event_concert.png" alt="Pancham Swar - 5th Year Anniversary Concert" className="event-img" />
+              <img src="https://ik.imagekit.io/sy8fu0lam/events/Pancham_Swar_CMA_Banner.png?tr=f-auto,q-40" alt="Pancham Swar - 5th Year Anniversary Concert" className="event-img" />
             </div>
             <div className="event-info">
               <h3 className="event-title">Pancham Swar - 5th Year Anniversary Concert</h3>
@@ -568,7 +568,7 @@ function App() {
           <div className="event-card reveal reveal-delay-1">
             <div className="event-img-wrapper">
               <span className="event-date-badge">31 OCT</span>
-              <img src="/images/event_masterclass.png" alt="CMA Masterclass" className="event-img" />
+              <img src="https://ik.imagekit.io/sy8fu0lam/events/masterclass.png?tr=f-auto,q-40" alt="CMA Masterclass" className="event-img" />
             </div>
             <div className="event-info">
               <h3 className="event-title">CMA Masterclass</h3>
@@ -580,7 +580,7 @@ function App() {
           <div className="event-card reveal reveal-delay-2">
             <div className="event-img-wrapper">
               <span className="event-date-badge">08 NOV</span>
-              <img src="/images/event_fiesta.png" alt="Prabhat Swar - Diwali Pahat" className="event-img" />
+              <img src="https://ik.imagekit.io/sy8fu0lam/events/Prabhat_Swar.png?tr=f-auto,q-40" alt="Prabhat Swar - Diwali Pahat" className="event-img" />
             </div>
             <div className="event-info">
               <h3 className="event-title">Prabhat Swar - Diwali Pahat</h3>
